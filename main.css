@@ -339,8 +339,8 @@ html[dir="rtl"] .header{
   flex-direction:row-reverse;
 }
 .accordion {
-    max-width: 300px;
-    min-width: 300px;
+    max-width: 400px;
+    min-width: 400px;
     margin: auto;
     background: var(--bg);
     border: 1px solid var(--border);
@@ -405,3 +405,19 @@ html[dir="rtl"] .header{
   [dir="rtl"] .accordion-header {
     flex-direction: row-reverse;
   }
+
+  
+@media (max-width: 639px) {
+  body{
+    padding: 0 20px;
+  }
+  .accordion {
+    max-width: 300px;
+    min-width: 300px;
+  }
+  .circle {
+    width: 30px;
+    height: 30px;
+    font-size: 1rem;
+  }
+}
