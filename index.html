@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8" />
+<title>Table Extractor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<!-- Font Awesome (Check Icon) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+
+<link id="site" rel="stylesheet" type="text/css" href="main.css"/>
+</head>
+
+<body>
+
+<!-- Language Toggle -->
+<!-- <div class="lang-switch">
+  <button class="active" onclick="setLang('en')">English</button>
+  <button onclick="setLang('ar')">العربية</button>
+</div> -->
+
+<!-- Header -->
+<div class="header">
+  <h1 data-i18n="title">TABLE EXTRACTOR</h1>
+</div>
+
+<!-- Stepper -->
+<div class="stepper">
+  <div class="step active" id="s1">
+    <div class="circle" data-step="1">1</div>
+    <span data-i18n="upload">Upload</span>
+  </div>
+  <div class="line"></div>
+
+  <div class="step" id="s2">
+    <div class="circle" data-step="2">2</div>
+    <span data-i18n="analyze">Analyze</span>
+  </div>
+  <div class="line"></div>
+
+  <div class="step" id="s3">
+    <div class="circle" data-step="3">3</div>
+    <span data-i18n="export">Export</span>
+  </div>
+</div>
+
+<!-- Card -->
+<div class="card">
+
+<!-- Upload -->
+<div class="tab active" id="upload">
+  <h2 data-i18n="uploadTitle">Upload & Analyze PDF</h2>
+  <div class="hr"></div>
+
+  <div class="drop-area" id="dropArea">
+    <div class="icon"><img alt="" src="img/upload.png"></div>
+    <p data-i18n="drag">Drag and drop file here</p>
+    <small>PDF • Max 200MB</small><br>
+    <button onclick="fileInput.click()" data-i18n="browse">Browse Files</button>
+    <input type="file" id="fileInput" hidden accept=".pdf">
+  </div>
+
+  <div class="hr"></div>
+  <!---- PDF file **-->
+  <div class="pdf-file">
+       <img alt="" src="img/pdf.png" height="35px"> <h5>test.pdf - <small>File Ready!</small></h5>
+       <img alt="" src="img/check.png" height="20px">
+  </div>
+  <div class="hr"></div>
+
+  <div class="classification">
+    <select><option data-i18n="select">Select Data Classification</option></select>
+    <button class="btn analyze" onclick="setTab('analyze',2)" data-i18n="analyzeBtn">
+      <img alt="" src="img/analyze.png" height="35px"> Analyze PDF
+    </button>
+  </div>
+</div>
+
+<!-- Analyze -->
+<div class="tab" id="analyze">
+  <h2 data-i18n="analyze">Analyze</h2>
+  <div class="hr"></div>
+  
+<div class="ring" data-target="100">
+  <span>Extraction in progress 0%</span>
+</div>
+
+  <div class="hr"></div>
+  <div class="classification">
+    <button class="btn green" onclick="setTab('export',3)" data-i18n="complete">
+      <img alt="" src="img/analysis.png" height="30px"> Analysis Complete
+    </button>
+  </div>
+</div>
+
+<!-- Export -->
+<div class="tab" id="export">
+  <h2 data-i18n="export">Export to Excel</h2>
+  <div class="hr"></div>
+  <div class="classification">
+       <div class="accordion" role="region">
+          <div class="accordion-item">
+            <button class="accordion-header"
+                    aria-expanded="false">
+              <span class="accordion-title">View Analyzed tables</span>
+              <i class="fa-solid fa-chevron-down accordion-icon"></i>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Analyzed table 1
+              </p>
+             <div class="hr"></div>
+              <p>
+                Analyzed table 2
+              </p>
+            </div>
+          </div>
+        </div>
+       <button class="btn green"><img alt="" src="img/analysis.png" height="30px"> Export to Excel</button>
+  </div>  
+  <div class="hr"></div>
+  <div class="ring" data-target="100"><span>0%</span></div>
+  <div class="hr"></div>
+  <div class="classification">
+    <button class="btn download" data-i18n="download"> <img alt="" src="img/download.png" height="30px">Download Excel</button>
+  </div>
+</div>
+
+</div>
+
+<script>
+  
+function animateProgress(ring){
+  const target = parseInt(ring.dataset.target);
+  const label = ring.querySelector("span");
+  let current = 0;
+
+  ring.style.setProperty("--progress", "0");
+  label.textContent = "0%";
+
+  const interval = setInterval(() => {
+    current++;
+    ring.style.setProperty("--progress", current);
+    label.textContent = current + "%";
+
+    if (current >= target) clearInterval(interval);
+  }, 20); // speed (lower = faster)
+}
+
+/* Stepper Logic with Animated Check */
+function setTab(tabId, stepNumber){
+  document.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  const activeTab = document.getElementById(tabId);
+  activeTab.classList.add("active");
+
+  // ✅ Stepper logic (unchanged)
+  document.querySelectorAll(".step").forEach((step,i)=>{
+    const circle = step.querySelector(".circle");
+    const num = i + 1;
+    step.classList.remove("active","done");
+
+    if(num < stepNumber){
+      step.classList.add("done");
+      circle.innerHTML = '<i class="fa-solid fa-check"></i>';
+    }
+    else if(num === stepNumber){
+      step.classList.add("active");
+      circle.textContent = num;
+    }
+    else{
+      circle.textContent = num;
+    }
+  });
+
+  // ✅ Animate progress if ring exists
+  const ring = activeTab.querySelector(".ring");
+  if (ring) animateProgress(ring);
+}
+
+/* Language (EN / AR) */
+const dict={
+  en:{
+    title:"TABLE EXTRACTOR",
+    upload:"Upload",
+    analyze:"Analyze",
+    export:"Export",
+    uploadTitle:"Upload & Analyze PDF",
+    drag:"Drag and drop file here",
+    browse:"Browse Files",
+    select:"Select Data Classification",
+    analyzeBtn:"Analyze PDF",
+    complete:"Analysis Complete",
+    download:"Download Excel"
+  },
+  ar:{
+    title:"استخراج الجداول",
+    upload:"رفع الملف",
+    analyze:"تحليل",
+    export:"تصدير",
+    uploadTitle:"رفع وتحليل ملف PDF",
+    drag:"اسحب الملف هنا",
+    browse:"استعراض الملفات",
+    select:"اختر تصنيف البيانات",
+    analyzeBtn:"تحليل الملف",
+    complete:"اكتمل التحليل",
+    download:"تحميل ملف إكسل"
+  }
+};
+
+function setLang(lang){
+  document.documentElement.lang=lang;
+  document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+  document.querySelectorAll("[data-i18n]").forEach(el=>{
+    el.textContent=dict[lang][el.dataset.i18n];
+  });
+  document.querySelectorAll(".lang-switch button")
+    .forEach(b=>b.classList.remove("active"));
+  event.target.classList.add("active");
+}
+const items = document.querySelectorAll(".accordion-item");
+
+  items.forEach(item => {
+    const header = item.querySelector(".accordion-header");
+
+    header.addEventListener("click", () => {
+      const isOpen = item.classList.contains("active");
+
+      items.forEach(i => {
+        i.classList.remove("active");
+        i.querySelector(".accordion-header")
+         .setAttribute("aria-expanded", "false");
+      });
+
+      if (!isOpen) {
+        item.classList.add("active");
+        header.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
