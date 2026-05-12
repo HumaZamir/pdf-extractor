@@ -415,9 +415,15 @@ html[dir="rtl"] .header{
     max-width: 300px;
     min-width: 300px;
   }
+  .card {
+    padding: 20px 20px;
+  }
   .circle {
     width: 30px;
     height: 30px;
     font-size: 1rem;
+  }
+  .header h1 {
+    font-size: 1.8rem;
   }
 }
