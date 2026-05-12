@@ -339,8 +339,8 @@ html[dir="rtl"] .header{
   flex-direction:row-reverse;
 }
 .accordion {
-    max-width: 400px;
-    min-width: 400px;
+    max-width: 300px;
+    min-width: 300px;
     margin: auto;
     background: var(--bg);
     border: 1px solid var(--border);
