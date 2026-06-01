@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Task Summary – Modern</title>
+
+<!-- ✅ GSAP -->
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.2/dist/gsap.min.js"></script>
+
+<style>
+
+/* ===== RESET ===== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== BASE ===== */
+body {
+    font-family: "Inter", -apple-system, sans-serif;
+    background: linear-gradient(135deg, #f5f6f2, #ffffff);
+    color: #111;
+}
+
+/* ===== TABS ===== */
+.tabs {
+    display: flex;
+    overflow-x: auto;
+    backdrop-filter: blur(10px);
+    background: rgba(255,255,255,0.8);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.tabs button {
+    flex: 0 0 auto;
+    padding: 14px 20px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: #777;
+    transition: all .3s ease;
+    position: relative;
+}
+
+.tabs button.active {
+    color: #C2522D;
+}
+
+.tabs button.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    width: 60%;
+    height: 3px;
+    background: #C2522D;
+    border-radius: 10px;
+}
+
+/* ===== CONTENT ===== */
+.tab-content {
+    display: none;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ===== HEADER ===== */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+    color: #666;
+}
+
+/* ===== TITLES ===== */
+.title-xl {
+    font-size: clamp(40px, 6vw, 90px);
+    line-height: 1.05;
+}
+
+.title-lg {
+    font-size: clamp(28px, 4vw, 56px);
+}
+
+.text-accent {
+    color: #C2522D;
+}
+
+/* ===== GLASS CARD ===== */
+.card {
+    background: rgba(255,255,255,0.65);
+    backdrop-filter: blur(14px);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+/* ===== COVER ===== */
+.cover {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cover p {
+    font-size: clamp(16px, 1.6vw, 20px);
+    max-width: 650px;
+    color: #444;
+}
+
+/* ===== METRICS ===== */
+.metrics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+.metric h2 {
+    font-size: 48px;
+}
+
+.metric span {
+    font-size: 12px;
+    color: #777;
+    letter-spacing: .12em;
+}
+
+/* ===== PROJECT ===== */
+.project {
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    gap: 24px;
+}
+
+.project-number {
+    font-size: 48px;
+    font-weight: 700;
+    color: #C2522D;
+}
+
+.project-content h2 {
+    font-size: clamp(24px, 3vw, 40px);
+}
+
+.project-content ul {
+    margin-top: 15px;
+}
+
+.project-content li {
+    margin-bottom: 8px;
+    color: #555;
+}
+
+/* ===== CHIPS ===== */
+.chips {
+    margin-top: 15px;
+}
+
+.chips span {
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.05);
+    margin-right: 8px;
+    font-size: 12px;
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+    font-size: 12px;
+    color: #888;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+    .project {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== ANIMATION STATES ===== */
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ===== TABS ===== -->
+<div class="tabs">
+<button class="tab active" onclick="switchTab(0)">Cover</button>
+<button class="tab" onclick="switchTab(1)">Overview</button>
+<button class="tab" onclick="switchTab(2)">01</button>
+<button class="tab" onclick="switchTab(3)">02</button>
+<button class="tab" onclick="switchTab(4)">03</button>
+<button class="tab" onclick="switchTab(5)">04</button>
+<button class="tab" onclick="switchTab(6)">05</button>
+<button class="tab" onclick="switchTab(7)">06</button>
+</div>
+
+<!-- ===== COVER ===== -->
+<div class="tab-content active">
+<div class="section-header">
+<span>Design · Internal Review</span>
+<span>2026</span>
+</div>
+
+<div class="cover">
+<h1 class="title-xl fade">
+The Last <span class="text-accent"><em>Three Months</em></span>
+</h1>
+
+<p class="fade">
+Six projects spanning presentations, document design, dashboards, and frontend implementation — a concise review of contributions.
+</p>
+</div>
+
+<div class="footer fade">
+<span>Prepared for Review</span>
+<span>01 / 08</span>
+</div>
+</div>
+
+<!-- ===== OVERVIEW ===== -->
+<div class="tab-content">
+<div class="section-header">
+<span>Overview</span>
+<span>Summary</span>
+</div>
+
+<h1 class="title-lg fade">
+Six deliverables, <span class="text-accent"><em>one quarter</em></span>
+</h1>
+
+<br>
+
+<div class="metrics">
+<div class="card metric fade"><h2>06</h2><span>Projects</span></div>
+<div class="card metric fade"><h2>02</h2><span>Bilingual</span></div>
+<div class="card metric fade"><h2>05</h2><span>Tools</span></div>
+<div class="card metric fade"><h2 class="text-accent">03</h2><span>Months</span></div>
+</div>
+
+</div>
+
+<!-- ===== PROJECT PAGES ===== -->
+<div class="tab-content">
+<div class="project fade">
+<div class="project-number">01</div>
+<div class="project-content">
+<h2>Census Presentation</h2>
+<ul>
+<li>Structured visual storytelling</li>
+<li>Improved readability</li>
+<li>Minimal text approach</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="tab-content">
+<div class="project fade">
+<div class="project-number">02</div>
+<div>
+<h2>CDB Manual</h2>
+<ul>
+<li>6 cover concepts</li>
+<li>Typography system</li>
+<li>Bilingual design</li>
+</ul>
+<div class="chips">
+<span>Word</span><span>Photoshop</span><span>PowerPoint</span>
+</div>
+</div>
+</div>
+</div>
+
+<div class="tab-content">
+<div class="project fade">
+<div class="project-number">03</div>
+<div>
+<h2>DG Dashboard</h2>
+<ul>
+<li>NPC aligned UI</li>
+<li>Improved clarity</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="tab-content">
+<div class="project fade">
+<div class="project-number">04</div>
+<div>
+<h2>PDF Extractor</h2>
+<ul>
+<li>Workflow redesign</li>
+<li>Responsive UI</li>
+<li>Bootstrap interaction</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="tab-content">
+<div class="project fade">
+<div class="project-number">05</div>
+<div>
+<h2>APID Presentation</h2>
+<ul>
+<li>Infographic storytelling</li>
+<li>Performance insights</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div class="tab-content">
+<div class="project fade">
+<div class="project-number">06</div>
+<div>
+<h2>SSD Workflow</h2>
+<ul>
+<li>Excel → workflow</li>
+<li>Process clarity</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- ===== JS ===== -->
+<script>
+
+function switchTab(index) {
+    const tabs = document.querySelectorAll(".tab");
+    const contents = document.querySelectorAll(".tab-content");
+
+    tabs.forEach(t => t.classList.remove("active"));
+
+    // exit animation
+    gsap.to(".tab-content.active", {
+        opacity: 0,
+        y: -20,
+        duration: 0.3,
+        onComplete: () => {
+            contents.forEach(c => c.classList.remove("active"));
+            tabs[index].classList.add("active");
+            contents[index].classList.add("active");
+
+            animateIn();
+        }
+    });
+}
+
+/* ===== ENTRANCE ===== */
+function animateIn() {
+    gsap.fromTo(".tab-content.active .fade",
+        { opacity: 0, y: 30 },
+        {
+            opacity: 1,
+            y: 0,
+            duration: 0.7,
+            stagger: 0.15,
+            ease: "power2.out"
+        }
+    );
+}
+
+/* INITIAL LOAD */
+animateIn();
+
+</script>
+
+</body>
+</html>
