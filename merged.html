@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Task Summary – Last 3 Months</title>
+
+<style>
+/* ===== GLOBAL STYLES (MERGED CSS) ===== */
+/* ===== BASE ===== */
+body {
+    margin: 0;
+    font-family: 'Times New Roman', sans-serif;
+    background: #FAFAF7;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+/* ===== TABS ===== */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+    overflow-x: auto;
+}
+
+.tabs button {
+    padding: 12px 18px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: #666;
+}
+
+.tabs button.active {
+    border-bottom: 3px solid #C2522D;
+    color: #C2522D;
+}
+
+/* ===== TAB CONTENT ===== */
+.tab-content {
+    display: none;
+    width: 100%;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* ===== SLIDE SYSTEM ===== */
+.slide-container {
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
+    margin:auto;
+    transform:scale(0.8);
+    transform-origin:top center;
+    background: #FAFAF7;
+}
+
+/* ===== RESPONSIVE SCALING ===== */
+@media (max-width: 1400px) {
+    .slide-container {
+        transform: scale(0.85);
+        transform-origin: top center;
+    }
+}
+
+@media (max-width: 1000px) {
+    .slide-container {
+        transform: scale(0.65);
+    }
+}
+
+@media (max-width: 600px) {
+    .slide-container {
+        transform: scale(0.5);
+    }
+}
+
+/* ===== COMMON ELEMENTS ===== */
+
+.line {
+    position: absolute;
+    height: 1px;
+    background: #DCDAD3;
+}
+
+.text-small {
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    color: #6B6B6B;
+    text-transform: uppercase;
+}
+
+.text-title {
+    font-family: serif;
+    color: #111;
+}
+
+.text-accent {
+    color: #C2522D;
+}
+
+.dot {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #C2522D;
+    position: absolute;
+}
+
+.flex-row {
+    display: flex;
+    gap: 24px;
+    align-items: baseline;
+}
+
+.chip {
+    display: inline-block;
+    padding: 6px 14px;
+    border: 1px solid #DCDAD3;
+    border-radius: 24px;
+    margin-right: 10px;
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- ========= TABS ========= -->
+<div class="tabs">
+    <button class="tab active" onclick="openTab(0)">Cover</button>
+    <button class="tab" onclick="openTab(1)">Overview</button>
+    <button class="tab" onclick="openTab(2)">01</button>
+    <button class="tab" onclick="openTab(3)">02</button>
+    <button class="tab" onclick="openTab(4)">03</button>
+    <button class="tab" onclick="openTab(5)">04</button>
+    <button class="tab" onclick="openTab(6)">05</button>
+    <button class="tab" onclick="openTab(7)">06</button>
+    <button class="tab" onclick="openTab(8)">Closing</button>
+</div>
+
+<!-- ========= CONTENT ========= -->
+<div class="wrapper">
+
+<!-- Cover -->
+<div class="tab-content active">
+<div class="slide-container">
+     <!-- PASTE CONTENT OF 1.html BODY HERE -->
+     <!-- top hairline rule -->
+  <div data-object="true" data-object-type="shape" data-screen-label="01 Cover" class="line" style="left:120px; top:96px; width:90%;"></div>
+
+  <!-- top meta row: brand mark left, date right -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:54px; width:600px; height:30px; font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:0.22em; color:#111; text-transform:uppercase; z-index:10;">
+    Design &nbsp;·&nbsp; Internal Review
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1500px; top:54px; width:300px; height:30px; font-family:var(--sans); font-size:14px; font-weight:500; letter-spacing:0.18em; color:#6B6B6B; text-transform:uppercase; text-align:right; z-index:10;">
+    Quarterly &nbsp;/&nbsp; 2026
+  </div>
+
+  <!-- small accent dot -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:300px; width:14px; height:14px; border-radius:50%; background:#C2522D; z-index:5;"></div>
+
+  <!-- eyebrow -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:152px; top:296px; width:600px; height:30px; font-family:var(--sans); font-size:15px; font-weight:600; letter-spacing:0.24em; color:#C2522D; text-transform:uppercase; z-index:10;">
+    Task Summary
+  </div>
+
+  <!-- main display title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:360px; width:1500px; height:400px; font-family:Times New Roman; font-size:220px; font-weight:400; line-height:0.95; color:#111; letter-spacing:-0.02em; z-index:10;">
+    The Last<br/><em style="font-style:italic; color:#C2522D;">Three&nbsp;Months</em>
+  </div>
+
+  <!-- subtitle -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:760px; width:1100px; height:90px; font-family:var(--sans); font-size:24px; font-weight:400; line-height:1.5; color:#2A2A2A; z-index:10;">
+    Six projects spanning presentations, document design, dashboards, and frontend implementation — a concise review of contributions, decisions, and deliverables.
+  </div>
+
+  <!-- bottom hairline -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:960px; width:1680px; height:1px; background:#DCDAD3; z-index:1;"></div>
+
+  <!-- footer left -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:990px; width:600px; height:30px; font-family:var(--sans); font-size:13px; font-weight:500; letter-spacing:0.16em; color:#6B6B6B; text-transform:uppercase; z-index:10;">
+    Prepared for Section Head Review
+  </div>
+
+  <!-- footer right -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1700px; top:990px; width:100px; height:30px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.16em; color:#111; text-align:right; z-index:10;">
+    01 / 09
+  </div>
+</div>
+</div>
+
+<!-- Overview -->
+<div class="tab-content">
+<div class="slide-container">
+<!-- PASTE CONTENT OF 2.html BODY HERE -->
+ <!-- top rule -->
+  <div data-object="true" data-object-type="shape" data-screen-label="02 Overview" class="line" style="left:120px; top:96px; width:90%;"></div>
+
+  <!-- top meta -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:54px; width:600px; height:30px; font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:0.22em; color:#111; text-transform:uppercase; z-index:10;">
+    Design &nbsp;·&nbsp; Internal Review
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1500px; top:54px; width:300px; height:30px; font-family:var(--sans); font-size:14px; font-weight:500; letter-spacing:0.18em; color:#6B6B6B; text-transform:uppercase; text-align:right; z-index:10;">
+    Overview
+  </div>
+
+  <!-- section eyebrow -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:170px; width:600px; height:28px; font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:0.24em; color:#C2522D; text-transform:uppercase; z-index:10;">
+    At a Glance
+  </div>
+
+  <!-- big title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:210px; width:1500px; height:160px; font-family:var(--serif); font-size:120px; font-weight:400; line-height:1.0; color:#111; letter-spacing:-0.02em; z-index:10;">
+    Six deliverables, <em style="font-style:italic; color:#C2522D;">one quarter.</em>
+  </div>
+
+  <!-- metric strip -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:430px; width:1680px; height:1px; background:#DCDAD3; z-index:1;"></div>
+
+  <!-- 4 metrics -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:460px; width:380px; height:160px; z-index:10;">
+    <div style="font-family:var(--serif); font-size:96px; font-weight:400; line-height:1; color:#111;">06</div>
+    <div style="font-family:var(--sans); font-size:15px; font-weight:600; letter-spacing:0.18em; color:#6B6B6B; text-transform:uppercase; margin-top:14px;">Projects Delivered</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:540px; top:460px; width:380px; height:160px; z-index:10;">
+    <div style="font-family:var(--serif); font-size:96px; font-weight:400; line-height:1; color:#111;">02</div>
+    <div style="font-family:var(--sans); font-size:15px; font-weight:600; letter-spacing:0.18em; color:#6B6B6B; text-transform:uppercase; margin-top:14px;">Bilingual&nbsp;·&nbsp;EN / AR</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:960px; top:460px; width:380px; height:160px; z-index:10;">
+    <div style="font-family:var(--serif); font-size:96px; font-weight:400; line-height:1; color:#111;">05</div>
+    <div style="font-family:var(--sans); font-size:15px; font-weight:600; letter-spacing:0.18em; color:#6B6B6B; text-transform:uppercase; margin-top:14px;">Tools Used</div>
+  </div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1380px; top:460px; width:380px; height:160px; z-index:10;">
+    <div style="font-family:var(--serif); font-size:96px; font-weight:400; line-height:1; color:#C2522D;">03</div>
+    <div style="font-family:var(--sans); font-size:15px; font-weight:600; letter-spacing:0.18em; color:#6B6B6B; text-transform:uppercase; margin-top:14px;">Months Reviewed</div>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:660px; width:1680px; height:1px; background:#DCDAD3; z-index:1;"></div>
+
+  <!-- index list -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:700px; width:600px; height:28px; font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:0.24em; color:#6B6B6B; text-transform:uppercase; z-index:10;">
+    Index
+  </div>
+
+  <!-- col 1 -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:750px; width:780px; height:200px; font-family:var(--sans); font-size:22px; line-height:1.7; color:#111; z-index:10;">
+    <div style="display:flex; gap:24px; align-items:baseline;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:46px;">01</span><span>Presentation on Census Update</span></div>
+    <div style="display:flex; gap:24px; align-items:baseline;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:46px;">02</span><span>CDB Guidance Document for Entities</span></div>
+    <div style="display:flex; gap:24px; align-items:baseline;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:46px;">03</span><span>DG Dashboard Design</span></div>
+  </div>
+
+  <!-- col 2 -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:990px; top:750px; width:810px; height:200px; font-family:var(--sans); font-size:22px; line-height:1.7; color:#111; z-index:10;">
+    <div style="display:flex; gap:24px; align-items:baseline;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:46px;">04</span><span>PDF Extractor — Design &amp; Frontend</span></div>
+    <div style="display:flex; gap:24px; align-items:baseline;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:46px;">05</span><span>APID Performance Presentation</span></div>
+    <div style="display:flex; gap:24px; align-items:baseline;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:46px;">06</span><span>SSD Priorities — Workflow</span></div>
+  </div>
+
+  <!-- bottom rule + footer -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:960px; width:1680px; height:1px; background:#DCDAD3; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:990px; width:600px; height:30px; font-family:var(--sans); font-size:13px; font-weight:500; letter-spacing:0.16em; color:#6B6B6B; text-transform:uppercase; z-index:10;">
+    Task Summary — Last 3 Months
+  </div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1700px; top:990px; width:100px; height:30px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.16em; color:#111; text-align:right; z-index:10;">
+    02 / 09
+  </div>
+</div>
+</div>
+
+<!-- 01 -->
+<div class="tab-content">
+<div class="slide-container">
+<!-- PASTE CONTENT OF 3.html BODY HERE -->
+<!-- header -->
+  <div data-object="true" data-object-type="shape" data-screen-label="03 Task 01 Census" class="line" style="left:120px; top:96px; width:90%;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:54px; width:600px; height:30px; font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:0.22em; color:#111; text-transform:uppercase; z-index:10;">Project 01 &nbsp;·&nbsp; Presentation Design</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1500px; top:54px; width:300px; height:30px; font-family:var(--sans); font-size:14px; font-weight:500; letter-spacing:0.18em; color:#6B6B6B; text-transform:uppercase; text-align:right; z-index:10;">Visual Storytelling</div>
+
+  <!-- left column: big numeral -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:200px; width:560px; height:440px; font-family:var(--serif); font-size:440px; font-weight:400; line-height:0.85; color:#111; letter-spacing:-0.04em; z-index:10;">
+    01
+  </div>
+
+  <!-- vertical caption under numeral -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:640px; width:80px; height:1px; background:#C2522D; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:660px; width:520px; height:120px; font-family:var(--sans); font-size:17px; font-weight:500; line-height:1.6; color:#6B6B6B; z-index:10;">
+    From Word document to a clear, visual-led presentation — minimal text, maximum readability.
+  </div>
+
+  <!-- right column: title + contributions -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:200px; width:380px; height:28px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.24em; color:#C2522D; text-transform:uppercase; z-index:10;">Census Update</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:235px; width:1050px; height:200px; font-family:var(--serif); font-size:84px; font-weight:400; line-height:1.0; color:#111; letter-spacing:-0.02em; z-index:10;">
+    Presentation on<br/><em style="font-style:italic;">Census Update.</em>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:760px; top:475px; width:1040px; height:1px; background:#DCDAD3; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:495px; width:300px; height:28px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.22em; color:#6B6B6B; text-transform:uppercase; z-index:10;">Key Contributions</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:540px; width:1050px; height:300px; font-family:var(--sans); font-size:22px; line-height:1.55; color:#111; z-index:10;">
+    <div style="display:flex; gap:24px; margin-bottom:22px;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:36px; flex-shrink:0;">→</span><span>Transformed a Word document into a clear and visually engaging presentation by extracting and structuring relevant information.</span></div>
+    <div style="display:flex; gap:24px; margin-bottom:22px;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:36px; flex-shrink:0;">→</span><span>Designed slides with concise content — readability emphasized through visuals, icons, and figures.</span></div>
+    <div style="display:flex; gap:24px;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:36px; flex-shrink:0;">→</span><span>Focused on impactful communication with minimal text and enhanced visual storytelling.</span></div>
+  </div>
+
+  <!-- footer -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:960px; width:1680px; height:1px; background:#DCDAD3; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:990px; width:600px; height:30px; font-family:var(--sans); font-size:13px; font-weight:500; letter-spacing:0.16em; color:#6B6B6B; text-transform:uppercase; z-index:10;">Task Summary — Last 3 Months</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1700px; top:990px; width:100px; height:30px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.16em; color:#111; text-align:right; z-index:10;">03 / 09</div>
+
+</div>
+</div>
+
+<!-- 02 -->
+<div class="tab-content">
+<div class="slide-container">
+<!-- PASTE CONTENT OF 4.html BODY HERE -->
+<!-- header -->
+  <div data-object="true" data-object-type="shape" data-screen-label="04 Task 02 CDB" class="line" style="left:120px; top:96px; width:90%;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:54px; width:600px; height:30px; font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:0.22em; color:#111; text-transform:uppercase; z-index:10;">Project 02 &nbsp;·&nbsp; Document Design</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1500px; top:54px; width:300px; height:30px; font-family:var(--sans); font-size:14px; font-weight:500; letter-spacing:0.18em; color:#6B6B6B; text-transform:uppercase; text-align:right; z-index:10;">Bilingual &nbsp;·&nbsp; AR / EN</div>
+
+  <!-- big numeral -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:200px; width:560px; height:440px; font-family:var(--serif); font-size:440px; font-weight:400; line-height:0.85; color:#111; letter-spacing:-0.04em; z-index:10;">
+    02
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:640px; width:80px; height:1px; background:#C2522D; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:660px; width:520px; height:120px; font-family:var(--sans); font-size:17px; font-weight:500; line-height:1.6; color:#6B6B6B; z-index:10;">
+    A bilingual manual built from the ground up — six cover concepts, unified typography, consistent iconography.
+  </div>
+
+  <!-- title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:200px; width:380px; height:28px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.24em; color:#C2522D; text-transform:uppercase; z-index:10;">CDB Guidance Document</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:235px; width:1050px; height:200px; font-family:var(--serif); font-size:84px; font-weight:400; line-height:1.0; color:#111; letter-spacing:-0.02em; z-index:10;">
+    Manual for<br/><em style="font-style:italic;">CDB Entities.</em>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:760px; top:475px; width:1040px; height:1px; background:#DCDAD3; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:495px; width:300px; height:28px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.22em; color:#6B6B6B; text-transform:uppercase; z-index:10;">Key Contributions</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:540px; width:1050px; height:260px; font-family:var(--sans); font-size:22px; line-height:1.55; color:#111; z-index:10;">
+    <div style="display:flex; gap:24px; margin-bottom:20px;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:36px; flex-shrink:0;">→</span><span>Designed <strong>six distinct cover page options</strong> for the manual.</span></div>
+    <div style="display:flex; gap:24px; margin-bottom:20px;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:36px; flex-shrink:0;">→</span><span>Applied consistent formatting, typography, and iconography throughout the document.</span></div>
+    <div style="display:flex; gap:24px;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:36px; flex-shrink:0;">→</span><span>Redesigned all visual elements for both Arabic and English versions — clarity, branding, and bilingual alignment.</span></div>
+  </div>
+
+  <!-- tools chips -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:830px; width:200px; height:28px; font-family:var(--sans); font-size:12px; font-weight:600; letter-spacing:0.22em; color:#6B6B6B; text-transform:uppercase; z-index:10;">Tools</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:870px; width:1040px; height:50px; font-family:var(--sans); font-size:15px; font-weight:500; color:#111; z-index:10;">
+    <span class="chip" style=" border:1px solid #DCDAD3; border-radius:999px; margin-right:10px;">MS Word</span>
+    <span class="chip" style=" border:1px solid #DCDAD3; border-radius:999px; margin-right:10px;">Adobe Photoshop</span>
+    <span class="chip" style=" border:1px solid #DCDAD3; border-radius:999px;">MS PowerPoint</span>
+  </div>
+
+  <!-- footer -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:960px; width:1680px; height:1px; background:#DCDAD3; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:990px; width:600px; height:30px; font-family:var(--sans); font-size:13px; font-weight:500; letter-spacing:0.16em; color:#6B6B6B; text-transform:uppercase; z-index:10;">Task Summary — Last 3 Months</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1700px; top:990px; width:100px; height:30px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.16em; color:#111; text-align:right; z-index:10;">04 / 09</div>
+
+</div>
+</div>
+
+<!-- 03 -->
+<div class="tab-content">
+<div class="slide-container">
+<!-- header -->
+  <div data-object="true" data-object-type="shape" data-screen-label="05 Task 03 DG Dashboard" class="line" style="left:120px; top:96px; width:90%;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:54px; width:600px; height:30px; font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:0.22em; color:#111; text-transform:uppercase; z-index:10;">Project 03 &nbsp;·&nbsp; UI / Visual Design</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1500px; top:54px; width:300px; height:30px; font-family:var(--sans); font-size:14px; font-weight:500; letter-spacing:0.18em; color:#6B6B6B; text-transform:uppercase; text-align:right; z-index:10;">NPC Theme</div>
+
+  <!-- big numeral -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:200px; width:560px; height:440px; font-family:var(--serif); font-size:440px; font-weight:400; line-height:0.85; color:#111; letter-spacing:-0.04em; z-index:10;">
+    03
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:640px; width:80px; height:1px; background:#C2522D; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:660px; width:520px; height:120px; font-family:var(--sans); font-size:17px; font-weight:500; line-height:1.6; color:#6B6B6B; z-index:10;">
+    A full visual reset for the DG dashboard — fewer icons, clearer hierarchy, aligned to the NPC color theme.
+  </div>
+
+  <!-- title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:200px; width:380px; height:28px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.24em; color:#C2522D; text-transform:uppercase; z-index:10;">DG Dashboard</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:235px; width:1050px; height:200px; font-family:var(--serif); font-size:84px; font-weight:400; line-height:1.0; color:#111; letter-spacing:-0.02em; z-index:10;">
+    New visual design,<br/><em style="font-style:italic;">less is more.</em>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:760px; top:475px; width:1040px; height:1px; background:#DCDAD3; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:495px; width:300px; height:28px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.22em; color:#6B6B6B; text-transform:uppercase; z-index:10;">Key Contributions</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:540px; width:1050px; height:240px; font-family:var(--sans); font-size:22px; line-height:1.55; color:#111; z-index:10;">
+    <div style="display:flex; gap:24px; margin-bottom:22px;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:36px; flex-shrink:0;">→</span><span>Developed a completely new visual design for the DG dashboard, aligned with the <strong>NPC color theme</strong>.</span></div>
+    <div style="display:flex; gap:24px;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:36px; flex-shrink:0;">→</span><span>Simplified the interface by reducing excessive icon usage — improving overall readability and user experience.</span></div>
+  </div>
+
+  <!-- tools chips -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:830px; width:200px; height:28px; font-family:var(--sans); font-size:12px; font-weight:600; letter-spacing:0.22em; color:#6B6B6B; text-transform:uppercase; z-index:10;">Tools</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:870px; width:1040px; height:50px; font-family:var(--sans); font-size:15px; font-weight:500; color:#111; z-index:10;">
+    <span class="chip" style=" border:1px solid #DCDAD3; border-radius:999px;">Adobe Photoshop</span>
+  </div>
+
+  <!-- footer -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:960px; width:1680px; height:1px; background:#DCDAD3; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:990px; width:600px; height:30px; font-family:var(--sans); font-size:13px; font-weight:500; letter-spacing:0.16em; color:#6B6B6B; text-transform:uppercase; z-index:10;">Task Summary — Last 3 Months</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1700px; top:990px; width:100px; height:30px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.16em; color:#111; text-align:right; z-index:10;">05 / 09</div>
+
+</div>
+</div>
+
+<!-- 04 -->
+<div class="tab-content">
+<div class="slide-container">
+<!-- header -->
+  <div data-object="true" data-object-type="shape" data-screen-label="06 Task 04 PDF Extractor" class="line" style="left:120px; top:96px; width:90%;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:54px; width:600px; height:30px; font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:0.22em; color:#111; text-transform:uppercase; z-index:10;">Project 04 &nbsp;·&nbsp; UX + Frontend</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1500px; top:54px; width:300px; height:30px; font-family:var(--sans); font-size:14px; font-weight:500; letter-spacing:0.18em; color:#6B6B6B; text-transform:uppercase; text-align:right; z-index:10;">Responsive Build</div>
+
+  <!-- big numeral -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:200px; width:560px; height:440px; font-family:var(--serif); font-size:440px; font-weight:400; line-height:0.85; color:#111; letter-spacing:-0.04em; z-index:10;">
+    04
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:640px; width:80px; height:1px; background:#C2522D; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:660px; width:520px; height:140px; font-family:var(--sans); font-size:17px; font-weight:500; line-height:1.6; color:#6B6B6B; z-index:10;">
+    Designed, approved, and shipped — a simpler workflow, fewer steps, and a responsive interface built on Bootstrap.
+  </div>
+
+  <!-- title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:200px; width:380px; height:28px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.24em; color:#C2522D; text-transform:uppercase; z-index:10;">PDF Extractor</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:235px; width:1100px; height:200px; font-family:var(--serif); font-size:84px; font-weight:400; line-height:1.0; color:#111; letter-spacing:-0.02em; z-index:10;">
+    Design &amp; <em style="font-style:italic;">frontend,</em><br/>end to end.
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:760px; top:475px; width:1040px; height:1px; background:#DCDAD3; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:495px; width:300px; height:28px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.22em; color:#6B6B6B; text-transform:uppercase; z-index:10;">Key Contributions</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:540px; width:1050px; height:280px; font-family:var(--sans); font-size:21px; line-height:1.5; color:#111; z-index:10;">
+    <div style="display:flex; gap:24px; margin-bottom:16px;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:36px; flex-shrink:0;">→</span><span>Simplified the workflow and interaction steps to enhance user experience.</span></div>
+    <div style="display:flex; gap:24px; margin-bottom:16px;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:36px; flex-shrink:0;">→</span><span>Implemented design improvements following section head approval.</span></div>
+    <div style="display:flex; gap:24px; margin-bottom:16px;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:36px; flex-shrink:0;">→</span><span>Converted the finalized design into a responsive, device-friendly interface.</span></div>
+    <div style="display:flex; gap:24px;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:36px; flex-shrink:0;">→</span><span>Integrated Bootstrap components — <strong>Stepper, Accordion, Progress</strong> indicators for usability.</span></div>
+  </div>
+
+  <!-- tools chips -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:840px; width:200px; height:28px; font-family:var(--sans); font-size:12px; font-weight:600; letter-spacing:0.22em; color:#6B6B6B; text-transform:uppercase; z-index:10;">Tools</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:880px; width:1040px; height:50px; font-family:var(--sans); font-size:15px; font-weight:500; color:#111; z-index:10;">
+    <span class="chip" style=" border:1px solid #DCDAD3; border-radius:999px; margin-right:10px;">Adobe Photoshop</span>
+    <span class="chip" style=" border:1px solid #DCDAD3; border-radius:999px; margin-right:10px;">Adobe XD</span>
+    <span class="chip" style=" border:1px solid #DCDAD3; border-radius:999px;">VS Code</span>
+  </div>
+
+  <!-- footer -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:960px; width:1680px; height:1px; background:#DCDAD3; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:990px; width:600px; height:30px; font-family:var(--sans); font-size:13px; font-weight:500; letter-spacing:0.16em; color:#6B6B6B; text-transform:uppercase; z-index:10;">Task Summary — Last 3 Months</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1700px; top:990px; width:100px; height:30px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.16em; color:#111; text-align:right; z-index:10;">06 / 09</div>
+
+</div>
+</div>
+
+<!-- 05 -->
+<div class="tab-content">
+<div class="slide-container">
+<!-- header -->
+  <div data-object="true" data-object-type="shape" data-screen-label="07 Task 05 APID" class="line" style="left:120px; top:96px; width:90%;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:54px; width:600px; height:30px; font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:0.22em; color:#111; text-transform:uppercase; z-index:10;">Project 05 &nbsp;·&nbsp; Presentation Design</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1500px; top:54px; width:300px; height:30px; font-family:var(--sans); font-size:14px; font-weight:500; letter-spacing:0.18em; color:#6B6B6B; text-transform:uppercase; text-align:right; z-index:10;">For NSC Director</div>
+
+  <!-- big numeral -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:200px; width:560px; height:440px; font-family:var(--serif); font-size:440px; font-weight:400; line-height:0.85; color:#111; letter-spacing:-0.04em; z-index:10;">
+    05
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:640px; width:80px; height:1px; background:#C2522D; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:660px; width:520px; height:120px; font-family:var(--sans); font-size:17px; font-weight:500; line-height:1.6; color:#6B6B6B; z-index:10;">
+    A performance narrative for the NSC Director — raw text turned into infographics, structured layouts, and clear metrics.
+  </div>
+
+  <!-- title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:200px; width:380px; height:28px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.24em; color:#C2522D; text-transform:uppercase; z-index:10;">APID Performance</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:235px; width:1100px; height:200px; font-family:var(--serif); font-size:84px; font-weight:400; line-height:1.0; color:#111; letter-spacing:-0.02em; z-index:10;">
+    Achievements told <em style="font-style:italic;">visually,</em><br/>for the NSC Director.
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:760px; top:475px; width:1040px; height:1px; background:#DCDAD3; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:495px; width:300px; height:28px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.22em; color:#6B6B6B; text-transform:uppercase; z-index:10;">Key Contributions</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:540px; width:1050px; height:240px; font-family:var(--sans); font-size:22px; line-height:1.55; color:#111; z-index:10;">
+    <div style="display:flex; gap:24px; margin-bottom:22px;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:36px; flex-shrink:0;">→</span><span>Converted provided textual content into a professional presentation — infographics, icons, structured layouts.</span></div>
+    <div style="display:flex; gap:24px;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:36px; flex-shrink:0;">→</span><span>Highlighted team achievements and performance metrics through visually engaging slides.</span></div>
+  </div>
+
+  <!-- tools chips -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:830px; width:200px; height:28px; font-family:var(--sans); font-size:12px; font-weight:600; letter-spacing:0.22em; color:#6B6B6B; text-transform:uppercase; z-index:10;">Tools</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:870px; width:1040px; height:50px; font-family:var(--sans); font-size:15px; font-weight:500; color:#111; z-index:10;">
+    <span class="chip" style=" border:1px solid #DCDAD3; border-radius:999px; margin-right:10px;">MS Word</span>
+    <span class="chip" style=" border:1px solid #DCDAD3; border-radius:999px; margin-right:10px;">Adobe Photoshop</span>
+    <span class="chip" style=" border:1px solid #DCDAD3; border-radius:999px;">MS PowerPoint</span>
+  </div>
+
+  <!-- footer -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:960px; width:1680px; height:1px; background:#DCDAD3; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:990px; width:600px; height:30px; font-family:var(--sans); font-size:13px; font-weight:500; letter-spacing:0.16em; color:#6B6B6B; text-transform:uppercase; z-index:10;">Task Summary — Last 3 Months</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1700px; top:990px; width:100px; height:30px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.16em; color:#111; text-align:right; z-index:10;">07 / 09</div>
+
+</div>
+</div>
+
+<!-- 06 -->
+<div class="tab-content">
+<div class="slide-container">
+<!-- header -->
+  <div data-object="true" data-object-type="shape" data-screen-label="08 Task 06 SSD" class="line" style="left:120px; top:96px; width:90%;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:54px; width:600px; height:30px; font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:0.22em; color:#111; text-transform:uppercase; z-index:10;">Project 06 &nbsp;·&nbsp; Workflow Design</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1500px; top:54px; width:300px; height:30px; font-family:var(--sans); font-size:14px; font-weight:500; letter-spacing:0.18em; color:#6B6B6B; text-transform:uppercase; text-align:right; z-index:10;">Data → Process</div>
+
+  <!-- big numeral -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:200px; width:560px; height:440px; font-family:var(--serif); font-size:440px; font-weight:400; line-height:0.85; color:#111; letter-spacing:-0.04em; z-index:10;">
+    06
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:640px; width:80px; height:1px; background:#C2522D; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:660px; width:520px; height:140px; font-family:var(--sans); font-size:17px; font-weight:500; line-height:1.6; color:#6B6B6B; z-index:10;">
+    Raw Excel datasets reshaped into a structured workflow — the priorities of the Statistical Systems Department, end to end.
+  </div>
+
+  <!-- title -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:200px; width:480px; height:28px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.24em; color:#C2522D; text-transform:uppercase; z-index:10;">SSD Priorities — Workflow</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:235px; width:1100px; height:200px; font-family:var(--serif); font-size:84px; font-weight:400; line-height:1.0; color:#111; letter-spacing:-0.02em; z-index:10;">
+    From spreadsheets<br/>to a <em style="font-style:italic;">complete workflow.</em>
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:760px; top:475px; width:1040px; height:1px; background:#DCDAD3; z-index:1;"></div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:495px; width:300px; height:28px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.22em; color:#6B6B6B; text-transform:uppercase; z-index:10;">Key Contributions</div>
+
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:540px; width:1050px; height:240px; font-family:var(--sans); font-size:22px; line-height:1.55; color:#111; z-index:10;">
+    <div style="display:flex; gap:24px; margin-bottom:22px;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:36px; flex-shrink:0;">→</span><span>Transformed raw datasets from Excel sheets into a structured, visually coherent workflow layout.</span></div>
+    <div style="display:flex; gap:24px;"><span style="font-family:var(--serif); font-size:24px; color:#C2522D; width:36px; flex-shrink:0;">→</span><span>Designed clear and intuitive representations to effectively communicate processes and priorities.</span></div>
+  </div>
+
+  <!-- tools chips -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:830px; width:200px; height:28px; font-family:var(--sans); font-size:12px; font-weight:600; letter-spacing:0.22em; color:#6B6B6B; text-transform:uppercase; z-index:10;">Tools</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:760px; top:870px; width:1040px; height:50px; font-family:var(--sans); font-size:15px; font-weight:500; color:#111; z-index:10;">
+    <span class="chip" style=" border:1px solid #DCDAD3; border-radius:999px; margin-right:10px;">Adobe Photoshop</span>
+    <span class="chip" style=" border:1px solid #DCDAD3; border-radius:999px; margin-right:10px;">Adobe XD</span>
+    <span class="chip" style=" border:1px solid #DCDAD3; border-radius:999px;">VS Code</span>
+  </div>
+
+  <!-- footer -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:960px; width:1680px; height:1px; background:#DCDAD3; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:990px; width:600px; height:30px; font-family:var(--sans); font-size:13px; font-weight:500; letter-spacing:0.16em; color:#6B6B6B; text-transform:uppercase; z-index:10;">Task Summary — Last 3 Months</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1700px; top:990px; width:100px; height:30px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.16em; color:#111; text-align:right; z-index:10;">08 / 09</div>
+
+</div>
+</div>
+
+<!-- Closing -->
+<div class="tab-content">
+<div class="slide-container">
+<!-- PASTE CONTENT OF 9.html BODY HERE -->
+<!-- top rule + meta -->
+  <div data-object="true" data-object-type="shape" data-screen-label="09 Closing" class="line" style="left:120px; top:96px; width:90%;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:54px; width:600px; height:30px; font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:0.22em; color:#111; text-transform:uppercase; z-index:10;">Design &nbsp;·&nbsp; Internal Review</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1500px; top:54px; width:300px; height:30px; font-family:var(--sans); font-size:14px; font-weight:500; letter-spacing:0.18em; color:#6B6B6B; text-transform:uppercase; text-align:right; z-index:10;">Closing</div>
+
+  <!-- accent dot -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:300px; width:14px; height:14px; border-radius:50%; background:#C2522D; z-index:5;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:152px; top:296px; width:600px; height:30px; font-family:var(--sans); font-size:15px; font-weight:600; letter-spacing:0.24em; color:#C2522D; text-transform:uppercase; z-index:10;">In Summary</div>
+
+  <!-- big closing line -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:360px; width:1680px; height:380px; font-family:var(--serif); font-size:175px; font-weight:400; line-height:0.96; color:#111; letter-spacing:-0.02em; z-index:10;">
+    Six projects.<br/>One <em style="font-style:italic; color:#C2522D;">consistent</em> direction.
+  </div>
+
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:760px; width:80px; height:1px; background:#C2522D; z-index:1;"></div>
+
+  <!-- closing paragraph -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:790px; width:1100px; height:120px; font-family:var(--sans); font-size:22px; font-weight:400; line-height:1.55; color:#2A2A2A; z-index:10;">
+    Clarity over decoration, structure over noise. Across presentations, documents, dashboards, and frontend work, the same instinct held: <em>less, but better.</em>
+  </div>
+
+  <!-- right-side label -->
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1380px; top:790px; width:420px; height:120px; font-family:var(--sans); font-size:14px; font-weight:600; letter-spacing:0.22em; color:#6B6B6B; text-transform:uppercase; line-height:1.6; z-index:10;">
+    Thank you<br/><span style="color:#111;">— Open for review &amp; feedback</span>
+  </div>
+
+  <!-- bottom -->
+  <div data-object="true" data-object-type="shape" style="position:absolute; left:120px; top:960px; width:1680px; height:1px; background:#DCDAD3; z-index:1;"></div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:120px; top:990px; width:600px; height:30px; font-family:var(--sans); font-size:13px; font-weight:500; letter-spacing:0.16em; color:#6B6B6B; text-transform:uppercase; z-index:10;">Task Summary — Last 3 Months</div>
+  <div data-object="true" data-object-type="textbox" style="position:absolute; left:1700px; top:990px; width:100px; height:30px; font-family:var(--sans); font-size:13px; font-weight:600; letter-spacing:0.16em; color:#111; text-align:right; z-index:10;">09 / 09</div>
+
+</div>
+</div>
+
+</div>
+
+<!-- ========= JS ========= -->
+<script>
+function openTab(index) {
+    let contents = document.querySelectorAll(".tab-content");
+    let tabs = document.querySelectorAll(".tab");
+
+    contents.forEach(c => c.classList.remove("active"));
+    tabs.forEach(t => t.classList.remove("active"));
+
+    contents[index].classList.add("active");
+    tabs[index].classList.add("active");
+}
+</script>
+
+</body>
+</html>
